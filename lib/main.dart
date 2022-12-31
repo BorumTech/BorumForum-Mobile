@@ -1,3 +1,6 @@
+import 'dart:core';
+
+import 'package:borumforum_mobile/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,10 +52,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _pages = <Widget>[
-    Text(
-      "Empowering the world since 2019",
-      style: TextStyle(fontSize: 24),
-    ),
+    FeedPage(),
     Icon(Icons.camera),
     Icon(Icons.chat)
   ];
@@ -79,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(child: _pages.elementAt(_selectedIndex)),
+      body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectedIndex,
           showUnselectedLabels: false,
